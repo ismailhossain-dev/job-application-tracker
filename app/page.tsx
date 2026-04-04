@@ -26,9 +26,20 @@ export default function Home() {
             </div>
           </div>
         </section>
+        {/* Hero Image Section with tabs  */}
+        <section className="border-t bg-white py-16">
+          <div>
+            <div>
+              {/* Tabs */}
+              <div>
+                <Button>Organize Application</Button>
+                <Button>Get Hired</Button>
+                <Button>Organize Applications</Button>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
   );
 }
-
-// 20 minute complete
