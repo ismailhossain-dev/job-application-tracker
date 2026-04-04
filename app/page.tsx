@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col bg-white">
@@ -15,9 +16,11 @@ export default function Home() {
             </p>
             <div className="flex flex-col items-center gap-4">
               {/* Shadcn button use */}
-              <Button size="lg" className="h-12 px-8 font-medium">
-                Start for free <ArrowRight className="ml-2" />
-              </Button>
+              <Link href="/sign-up">
+                <Button size="lg" className="h-12 px-8 font-medium">
+                  Start for free <ArrowRight className="ml-2" />
+                </Button>
+              </Link>
               <p className="text-sm text-muted-foreground ">Free forever. No card required</p>
             </div>
           </div>
