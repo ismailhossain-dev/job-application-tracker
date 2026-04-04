@@ -1,3 +1,4 @@
+"use client";
 import { Button } from "@/components/ui/button";
 
 import { ArrowRight } from "lucide-react";
@@ -6,7 +7,7 @@ import Link from "next/link";
 import { useState } from "react";
 export default function Home() {
   // Active useState
-  const [activeTab, setActiveTab] = useState(""); //organize, hired, boards
+  const [activeTab, setActiveTab] = useState("organize"); //organize, hired, boards
   return (
     <div className="flex min-h-screen flex-col bg-white">
       <main className="flex-1">
@@ -36,24 +37,42 @@ export default function Home() {
             <div className="mx-auto max-w-6xl">
               {/* Tabs */}
               <div className="flex gap-2 justify-center">
-                <Button className="bg-pink-500 ">Organize Application</Button>
-                <Button className="bg-pink-500 ">Get Hired</Button>
-                <Button className="bg-pink-500 ">Organize Applications</Button>
+                <Button onClick={() => setActiveTab("organize")} className="bg-pink-500 ">
+                  Organize Application
+                </Button>
+                <Button onClick={() => setActiveTab("hired")} className="bg-pink-500 ">
+                  Get Hired
+                </Button>
+                <Button onClick={() => setActiveTab("boards")} className="bg-pink-500 ">
+                  Organize Applications
+                </Button>
               </div>
-              {/* image */}
+              {/* image ekane ekta useState er mardome sundor kaj kora hoyche */}
               <div className="relative mx-auto max-w-5xl overflow-hidden rounded-lg border border-gray-200 shadow-xl">
-                <Image
-                  src="/hero-images/hero1.png"
-                  alt="Application organize"
-                  width={1200}
-                  height={800}
-                ></Image>
-                <Image
-                  src="/hero-images/hero1.png"
-                  alt="Application organize"
-                  width={1200}
-                  height={800}
-                ></Image>
+                {activeTab === "organize" && (
+                  <Image
+                    src="/hero-images/hero1.png"
+                    alt="Application organize"
+                    width={1200}
+                    height={800}
+                  ></Image>
+                )}
+                {activeTab === "hired" && (
+                  <Image
+                    src="/hero-images/hero2.png"
+                    alt="Application organize"
+                    width={1200}
+                    height={800}
+                  ></Image>
+                )}
+                {activeTab === "boards" && (
+                  <Image
+                    src="/hero-images/hero3.png"
+                    alt="Application organize"
+                    width={1200}
+                    height={800}
+                  ></Image>
+                )}
               </div>
             </div>
           </div>
