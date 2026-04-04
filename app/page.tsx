@@ -1,8 +1,12 @@
 import { Button } from "@/components/ui/button";
 
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 export default function Home() {
+  // Active useState
+  const [activeTab, setActiveTab] = useState(""); //organize, hired, boards
   return (
     <div className="flex min-h-screen flex-col bg-white">
       <main className="flex-1">
@@ -28,13 +32,28 @@ export default function Home() {
         </section>
         {/* Hero Image Section with tabs  */}
         <section className="border-t bg-white py-16">
-          <div>
-            <div>
+          <div className="container mx-auto px-4">
+            <div className="mx-auto max-w-6xl">
               {/* Tabs */}
-              <div>
-                <Button>Organize Application</Button>
-                <Button>Get Hired</Button>
-                <Button>Organize Applications</Button>
+              <div className="flex gap-2 justify-center">
+                <Button className="bg-pink-500 ">Organize Application</Button>
+                <Button className="bg-pink-500 ">Get Hired</Button>
+                <Button className="bg-pink-500 ">Organize Applications</Button>
+              </div>
+              {/* image */}
+              <div className="relative mx-auto max-w-5xl overflow-hidden rounded-lg border border-gray-200 shadow-xl">
+                <Image
+                  src="/hero-images/hero1.png"
+                  alt="Application organize"
+                  width={1200}
+                  height={800}
+                ></Image>
+                <Image
+                  src="/hero-images/hero1.png"
+                  alt="Application organize"
+                  width={1200}
+                  height={800}
+                ></Image>
               </div>
             </div>
           </div>
